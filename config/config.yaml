@@ -1,0 +1,9 @@
+artifacts_dir: artifacts
+
+
+data_ingestion:
+    ingestion_dir: artifacts/data_ingestion
+    connection_str: mongodb://localhost:27017
+    data_file: artifacts/data_ingestion/data.csv
+    train_data_file: artifacts/data_ingestion/train.csv
+    test_data_file: artifacts/data_ingestion/test.csv  

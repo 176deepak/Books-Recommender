@@ -162,3 +162,5 @@ cython_debug/
 Book_Recommender.egg-info/
 recommender
 LOGS/
+
+artifacts/
