@@ -22,7 +22,6 @@ class ConfigurationManager:
 
         data_ingestion_config = DataIngestionConfig(
             ingestion_dir = config.ingestion_dir,
-            connection_str = config.connection_str,
             data_file = config.data_file,
             train_data_file = config.train_data_file,
             test_data_file = config.test_data_file,
