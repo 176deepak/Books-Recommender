@@ -6,3 +6,9 @@ data_ingestion:
     data_file: artifacts/data_ingestion/data.csv
     train_data_file: artifacts/data_ingestion/train.csv
     test_data_file: artifacts/data_ingestion/test.csv  
+
+data_validation:
+    validation_dir: artifacts/data_validation
+    status_filepath: artifacts/data_validation/status.txt
+    required_files: ["train.csv", "test.csv"]
+    

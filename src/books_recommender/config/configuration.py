@@ -1,5 +1,5 @@
 from src.books_recommender.constants import *
-from src.books_recommender.entity import DataIngestionConfig
+from src.books_recommender.entity import (DataIngestionConfig, DataValidationConfig)
 from src.books_recommender.utils.common import read_yaml, create_dirs
 
 
@@ -28,3 +28,17 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+    
+
+    def get_data_validation_config(self) -> DataValidationConfig:
+        config = self.config.data_validation
+
+        create_dirs([config.validation_dir])
+
+        data_validation_config = DataValidationConfig(
+            validation_dir = config.validation_dir,
+            status_filepath = config.status_filepath,
+            required_files = config.required_files  
+        )
+
+        return data_validation_config

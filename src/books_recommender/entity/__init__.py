@@ -8,3 +8,9 @@ class DataIngestionConfig:
     data_file: Path 
     train_data_file: Path
     test_data_file: Path
+
+@dataclass
+class DataValidationConfig:
+    validation_dir: Path
+    status_filepath: Path
+    required_files: list
