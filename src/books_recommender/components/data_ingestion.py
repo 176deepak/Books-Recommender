@@ -17,16 +17,22 @@ class DataIngestion:
 
     
     def downloadfile(self):
-        host = os.getenv("host")
-        port = os.getenv("port")
-        connection_str = "mongodb://"+host+":"+port
-        df = get_data(connection_str=connection_str)
-        df.to_csv(self.config.data_file)
-        logging.info(f"data saved successfully at {self.config.data_file}")
+        books_df = get_data(coll_name="books_data")
+        books_df.to_csv(self.config.books_data_file, index=False)
+        logging.info(f"books data saved successfully at {self.config.books_data_file}")
 
-        df_train, df_test = train_test_split(df, test_size=0.2)
-        df_train.to_csv(self.config.train_data_file)
-        logging.info(f"training data saved successfully at {self.config.train_data_file}")
-        df_test.to_csv(self.config.test_data_file)
-        logging.info(f"test data saved successfully at {self.config.test_data_file}")
+        ratings_df = get_data(coll_name="ratings_data")
+        ratings_df.to_csv(self.config.ratings_data_file, index=False)
+        logging.info(f"ratings data saved successfully at {self.config.ratings_data_file}")
+
+        users_df = get_data(coll_name="users_data")
+        users_df.to_csv(self.config.users_data_file, index=False)
+        logging.info(f"users data saved successfully at {self.config.users_data_file}")
+
+
+        # df_train, df_test = train_test_split(df, test_size=0.2)
+        # df_train.to_csv(self.config.train_data_file)
+        # logging.info(f"training data saved successfully at {self.config.train_data_file}")
+        # df_test.to_csv(self.config.test_data_file)
+        # logging.info(f"test data saved successfully at {self.config.test_data_file}")
 

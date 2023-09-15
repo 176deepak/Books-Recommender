@@ -7,6 +7,24 @@ from pathlib import Path
 from box import ConfigBox
 from src.books_recommender.logger import logging
 from src.books_recommender.exception import CustomException
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
+
+def db_conn():
+    try:
+        host = os.getenv("host")
+        port = os.getenv("port")
+        connection_str = "mongodb://"+host+":"+port
+        client = mongo.MongoClient(connection_str)
+        logging.info("database connection established successfully...")
+
+        return client
+    except Exception as e:
+        raise CustomException(e, sys)
+        
 
 
 def read_yaml(path):
@@ -26,22 +44,22 @@ def create_dirs(paths:list):
         logging.info(f"Created directory at {path}")
 
 
-def get_data(connection_str):
+def get_data(coll_name):
     try:
-        client = mongo.MongoClient(connection_str)
-        logging.info("Connection to mongodb is established")
+        client = db_conn()
+        database = os.getenv("database")
+        db = client[database]
+        coll_df = db[coll_name]
+        data = list(coll_df.find())
+        df = pd.DataFrame(data, index = None)
+        df.drop(['_id'], axis=1, inplace=True)
+        logging.info(f"{coll_name} collection converted into dataframe successfully.")
 
-        db = client.recommender_app_data
-        collection = db.books_data
-        cursor = collection.find()
-        data = list(cursor)
-        df = pd.DataFrame(data)
-        df.drop(['_id'], axis=1, inplace = True)
-        logging.info("collection's data extracted successfully")
-        
-        return df
+        return df    
     except Exception as e:
         raise CustomException(e, sys)
+    
+    
     
 
 

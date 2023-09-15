@@ -13,8 +13,3 @@ class DataIngestionTraining:
         data_ingestion_config = config.get_data_ingestion_config()
         data_ingestion = DataIngestion(data_ingestion_config)
         data_ingestion.downloadfile()
-
-
-if __name__ == '__main__':
-    obj = DataIngestionTraining()
-    obj.main()

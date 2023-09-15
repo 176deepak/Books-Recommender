@@ -5,9 +5,11 @@ from pathlib import Path
 @dataclass
 class DataIngestionConfig:
     ingestion_dir: Path
-    data_file: Path 
-    train_data_file: Path
-    test_data_file: Path
+    books_data_file: Path
+    ratings_data_file: Path
+    users_data_file: Path 
+    # train_data_file: Path
+    # test_data_file: Path
 
 @dataclass
 class DataValidationConfig:
