@@ -12,5 +12,5 @@ data_ingestion:
 data_validation:
     validation_dir: artifacts/data_validation
     status_filepath: artifacts/data_validation/status.txt
-    required_files: ["train.csv", "test.csv"]
+    required_files: ["books.csv", "ratings.csv", "users.csv"]
     

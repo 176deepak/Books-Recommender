@@ -25,8 +25,6 @@ class ConfigurationManager:
             books_data_file = config.books_data_file,
             ratings_data_file = config.ratings_data_file,
             users_data_file = config.users_data_file,
-            # train_data_file = config.train_data_file,
-            # test_data_file = config.test_data_file,
         )
 
         return data_ingestion_config

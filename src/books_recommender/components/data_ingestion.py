@@ -29,10 +29,3 @@ class DataIngestion:
         users_df.to_csv(self.config.users_data_file, index=False)
         logging.info(f"users data saved successfully at {self.config.users_data_file}")
 
-
-        # df_train, df_test = train_test_split(df, test_size=0.2)
-        # df_train.to_csv(self.config.train_data_file)
-        # logging.info(f"training data saved successfully at {self.config.train_data_file}")
-        # df_test.to_csv(self.config.test_data_file)
-        # logging.info(f"test data saved successfully at {self.config.test_data_file}")
-

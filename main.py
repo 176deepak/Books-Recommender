@@ -14,12 +14,12 @@ except Exception as e:
     raise e
 
 
-# STAGE_NAME = "Data Validation"
-# try:
-#     logging.info(f"--------------------{STAGE_NAME} start--------------------")
-#     obj = DataValidator()
-#     obj.main()
-#     logging.info(f"------------------------{STAGE_NAME} end--------------------")
-# except Exception as e:
-#     raise e
+STAGE_NAME = "Data Validation"
+try:
+    logging.info(f"--------------------{STAGE_NAME} start--------------------")
+    obj = DataValidator()
+    obj.main()
+    logging.info(f"------------------------{STAGE_NAME} end--------------------")
+except Exception as e:
+    raise e
 
