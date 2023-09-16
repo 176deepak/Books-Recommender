@@ -1,5 +1,5 @@
 from src.books_recommender.constants import *
-from src.books_recommender.entity import (DataIngestionConfig, DataValidationConfig, DataTransformerConfig)
+from src.books_recommender.entity import (DataIngestionConfig, DataValidationConfig, DataTransformerConfig, ModelTrainerConfig)
 from src.books_recommender.utils.common import read_yaml, create_dirs
 
 
@@ -56,3 +56,16 @@ class ConfigurationManager:
         )
         
         return data_transformation_config
+    
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        create_dirs([config.model_trainer_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+            model_trainer_dir=config.model_trainer_dir,
+            model_path = config.model_path,
+            similarity_score = config.similarity_score,
+            data_path = config.data_path
+        )
+
+        return model_trainer_config

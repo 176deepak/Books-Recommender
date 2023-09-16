@@ -1,8 +1,4 @@
-import os
 import sys
-from pathlib import Path
-import shutil
-import numpy as np
 import pandas as pd
 from src.books_recommender.entity import DataTransformerConfig
 from src.books_recommender.logger import logging

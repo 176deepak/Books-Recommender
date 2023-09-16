@@ -20,3 +20,10 @@ class DataTransformerConfig:
     transformer_dir: Path
     books_df_dir: Path
     final_df_dir: Path
+
+@dataclass
+class ModelTrainerConfig:
+    model_trainer_dir: Path
+    model_path: Path
+    similarity_score: Path
+    data_path: Path

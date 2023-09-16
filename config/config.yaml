@@ -16,3 +16,9 @@ data_transformation:
     transformation_dir: artifacts/data_transformation
     books_df_dir: artifacts/data_transformation/books.csv
     final_df_dir: artifacts/data_transformation/final.csv
+
+model_trainer:
+    model_trainer_dir: artifacts/model_trainer
+    model_path: artifacts/model_trainer/model.pkl
+    similarity_score: artifacts/model_trainer/similarity_score.pkl
+    data_path: artifacts/model_trainer/data.pkl
