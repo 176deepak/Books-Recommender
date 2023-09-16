@@ -8,6 +8,7 @@ from box import ConfigBox
 from src.books_recommender.logger import logging
 from src.books_recommender.exception import CustomException
 from dotenv import load_dotenv
+import pickle as pkl
 
 
 load_dotenv()
@@ -60,8 +61,8 @@ def get_data(coll_name):
         raise CustomException(e, sys)
     
     
-    
-    
-
-
+def pickled_loader(filepath:Path):
+    with open(filepath, 'rb') as file:
+        obj = pkl.load(file)
+    return obj
 
