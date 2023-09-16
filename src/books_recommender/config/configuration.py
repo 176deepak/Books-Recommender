@@ -1,5 +1,5 @@
 from src.books_recommender.constants import *
-from src.books_recommender.entity import (DataIngestionConfig, DataValidationConfig)
+from src.books_recommender.entity import (DataIngestionConfig, DataValidationConfig, DataTransformerConfig)
 from src.books_recommender.utils.common import read_yaml, create_dirs
 
 
@@ -42,3 +42,17 @@ class ConfigurationManager:
         )
 
         return data_validation_config
+    
+
+    def get_data_transformation_config(self) -> DataTransformerConfig:
+        config = self.config.data_transformation
+
+        create_dirs([config.transformation_dir])
+
+        data_transformation_config = DataTransformerConfig(
+            transformer_dir=config.transformation_dir,
+            books_df_dir=config.books_df_dir,
+            final_df_dir=config.final_df_dir
+        )
+        
+        return data_transformation_config

@@ -12,7 +12,3 @@ class DataValidator:
         validatior = DataValidation(data_ingestion_config)
         validatior.validate_files()
 
-
-if __name__ == '__main__':
-    obj = DataValidator()
-    obj.main()

@@ -1,8 +1,8 @@
-import os
-import pandas as pd
-import pymongo as mongo
-from sklearn.model_selection import train_test_split
-from pathlib import Path
+# import os
+# import pandas as pd
+# import pymongo as mongo
+# from sklearn.model_selection import train_test_split
+# from pathlib import Path
 from src.books_recommender.entity import DataIngestionConfig
 from src.books_recommender.logger import logging
 from src.books_recommender.utils.common import get_data

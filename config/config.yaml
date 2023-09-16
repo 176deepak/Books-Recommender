@@ -6,11 +6,13 @@ data_ingestion:
     books_data_file: artifacts/data_ingestion/books.csv
     ratings_data_file: artifacts/data_ingestion/ratings.csv
     users_data_file: artifacts/data_ingestion/users.csv
-    train_data_file: artifacts/data_ingestion/train.csv
-    test_data_file: artifacts/data_ingestion/test.csv  
-
+    
 data_validation:
     validation_dir: artifacts/data_validation
     status_filepath: artifacts/data_validation/status.txt
     required_files: ["books.csv", "ratings.csv", "users.csv"]
-    
+
+data_transformation:
+    transformation_dir: artifacts/data_transformation
+    books_df_dir: artifacts/data_transformation/books.csv
+    final_df_dir: artifacts/data_transformation/final.csv
